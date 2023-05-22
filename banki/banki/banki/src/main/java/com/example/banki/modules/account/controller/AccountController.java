@@ -21,7 +21,7 @@ public class AccountController {
     @PostMapping("/register/{customerId}/{bankId}")
     @ResponseBody
     public ResponseEntity<Account> registerAccount(@PathVariable int customerId, @PathVariable int bankId) {
-        return ResponseEntity.ok(accountService.save(customerId, bankId));
+        return ResponseEntity.ok(accountService.createAccountForCustomer(customerId, bankId));
     }
 
 
@@ -42,5 +42,21 @@ public class AccountController {
         return accountService.getAllAccounts();
     }
 
+    @PostMapping("/false/{cusId}")
+    @ResponseBody
+    public void accountBlocked(@PathVariable int cusId){
+        accountService.accountBlocked(cusId);
+    }
+    @PostMapping("/true/{cusId}")
+    @ResponseBody
+    public void accountUnblocked(@PathVariable int cusId){
+        accountService.unblockAccount(cusId);
+    }
+
+    @GetMapping("/balance/{accId}")
+    @ResponseBody
+    public String getBalance(@PathVariable int accId){
+        return accountService.getAccountBalance(accId);
+    }
 
 }

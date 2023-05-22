@@ -26,46 +26,68 @@ public class AccountService {
 
 
     @Transactional
-    public Account save(int cusId ,int bankId){
+    public Account createAccountForCustomer(int cusId, int bankId) {
         Customer customer = customerRepository.findById(cusId).get();
         BankBranch bankBranch = bankBranchRepository.findById(bankId).get();
-        Account account = new Account(customer,bankBranch);
+        Account account = new Account(customer, bankBranch);
         return accountRepository.save(account);
     }
 
 
-    public Customer transferToTheAccount (int accSource , double amount , int accDestination ){
+    public Customer transferToTheAccount(int accSource, double amount, int accDestination) {
+
         Account source = accountRepository.findById(accSource).get();
         Account destination = accountRepository.findById(accDestination).get();
-        if(source.getCurrentBalance() > amount){
-            double deductionAcc  = source.getCurrentBalance() - amount;
+        if (source.getCustomer().isEnabled() == true && destination.getCustomer().isEnabled() == true &&
+                source.getCurrentBalance() > amount) {
+            double deductionAcc = source.getCurrentBalance() - amount;
             source.setCurrentBalance(deductionAcc);
             double addAccount = destination.getCurrentBalance() + amount;
             destination.setCurrentBalance(addAccount);
             accountRepository.save(destination);
-        }else {
+        } else {
             new RuntimeException("Your account balance is insufficient");
         }
-        Account print = accountRepository.findById(accDestination).orElseThrow(()-> new RuntimeException("Your ID is not available"));
-        Customer printCus = customerRepository.findById(print.getCustomer().getId()).orElseThrow(()-> new RuntimeException("Your ID is not available"));
+        Account print = accountRepository.findById(accDestination).orElseThrow(() -> new RuntimeException("Your ID is not available"));
+        Customer printCus = customerRepository.findById(print.getCustomer().getId()).orElseThrow(() -> new RuntimeException("Your ID is not available"));
         printCus.setAccounts(Collections.singletonList(print));
 
         return printCus;
     }
 
-        public Account depositToAccount(int accId , double amount){
+    public Account depositToAccount(int accId, double amount) {
         Account a = accountRepository.findById(accId).get();
-        if (amount > 0 ){
+        if (a.getCustomer().isEnabled() == true && amount > 0) {
             a.setCurrentBalance(amount);
             accountRepository.save(a);
-        }else {
+        } else {
             new RuntimeException("The amount entered is not correct");
         }
-        return  accountRepository.findById(accId).orElseThrow(()-> new RuntimeException("Your ID is not available"));
-        }
+        return accountRepository.findById(accId).orElseThrow(() -> new RuntimeException("Your ID is not available"));
+    }
 
 
-        public List<Account> getAllAccounts(){
+    public List<Account> getAllAccounts() {
         return accountRepository.findAll();
-        }
+    }
+
+    public void accountBlocked(int cusId){
+        Customer bl= customerRepository.findById(cusId).get();
+        bl.setEnabled(false);
+        customerRepository.save(bl);    }
+
+    public void unblockAccount(int cusId){
+        Customer unbl= customerRepository.findById(cusId).get();
+        unbl.setEnabled(true);
+        customerRepository.save(unbl);
+    }
+
+
+    public String getAccountBalance(int accId){
+        Account a = accountRepository.findById(accId).get();
+        String name = a.getCustomer().getName() + " - " + a.getCustomer().getFamily() ;
+        String balannce = String.valueOf(a.getCurrentBalance());
+        return "full name is: " + name +
+                "\n" + "account balance is: "+ balannce ;
+    }
 }
