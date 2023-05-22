@@ -1,9 +1,16 @@
 package com.example.banki.modules.customer.model;
+import com.example.banki.modules.account.model.Account;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Entity
 @Table
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Customer  {
 
 
@@ -17,7 +24,20 @@ public class Customer  {
     private Long card_id;
 
     @Email
+    @Column(unique = true)
+    @NotBlank
     private String email;
+
+    public List<Account> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(List<Account> accountList) {
+        this.accounts = accountList;
+    }
+
+    @OneToMany
+    private List<Account> accounts;
 
     public Customer(String name, String family, String phoneNumber, Long card_id, String email) {
         this.name = name;

@@ -9,6 +9,7 @@ import com.example.banki.modules.customer.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -47,6 +48,8 @@ public class AccountService {
         }
         Account print = accountRepository.findById(accDestination).orElseThrow(()-> new RuntimeException("Your ID is not available"));
         Customer printCus = customerRepository.findById(print.getCustomer().getId()).orElseThrow(()-> new RuntimeException("Your ID is not available"));
+        printCus.setAccounts(Collections.singletonList(print));
+
         return printCus;
     }
 
