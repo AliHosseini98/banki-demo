@@ -3,10 +3,12 @@ package com.example.banki.modules.customer.controller;
 import com.example.banki.modules.customer.model.Customer;
 import com.example.banki.modules.customer.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -19,8 +21,9 @@ public class CustomerController {
 
 
     @PostMapping("/new")
-    public ResponseEntity<Customer> registerCustomer(@RequestBody Customer customer){
-        return ResponseEntity.ok(customerService.save(customer));}
+    public ResponseEntity<Customer> registerCustomer(@Valid @RequestBody Customer customer){
+        return  new ResponseEntity<>(customerService.save(customer), HttpStatus.CREATED);
+    }
 
     @PutMapping("/update")
     public ResponseEntity<Customer> updateCustomer (@RequestBody Customer customer){
