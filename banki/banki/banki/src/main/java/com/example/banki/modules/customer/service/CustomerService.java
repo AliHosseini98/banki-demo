@@ -36,7 +36,6 @@ public class CustomerService {
         update_customer.setFamily(customer.getFamily());
         CustomerDTO dto = convertor.entityToDto(update_customer);
         customerRepository.save(update_customer);
-
         return dto;
     }
 
