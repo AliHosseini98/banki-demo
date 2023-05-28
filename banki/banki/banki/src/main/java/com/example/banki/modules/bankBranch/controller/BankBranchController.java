@@ -5,6 +5,7 @@ import com.example.banki.modules.bankBranch.service.BankBranchService;
 import com.example.banki.modules.employee.model.Employee;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,8 +39,10 @@ public class BankBranchController {
 
     @GetMapping("/get/emp/{id}")
     @ResponseBody
-    List<Employee> getEmployyesById(@PathVariable int id){
+    List<Employee> getEmployyesById(@PathVariable int id) {
         return bankBranchService.getEmployeesByBankId(id);
     }
 
+
 }
+
