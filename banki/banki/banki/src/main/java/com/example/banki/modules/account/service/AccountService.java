@@ -25,11 +25,11 @@ public class AccountService {
     }
 
 
-    @Transactional
+
     public Account createAccountForCustomer(int cusId, int bankId) {
         Customer customer = customerRepository.findById(cusId).get();
         BankBranch bankBranch = bankBranchRepository.findById(bankId).get();
-        Account account = new Account(customer, bankBranch);
+        Account account = new Account (customer,bankBranch);
         return accountRepository.save(account);
     }
 

@@ -1,5 +1,6 @@
 package com.example.banki.modules.bankBranch.service;
 
+import com.example.banki.modules.bankBranch.BankBranchConvertor;
 import com.example.banki.modules.bankBranch.model.BankBranch;
 import com.example.banki.modules.bankBranch.repository.BankBranchRepository;
 import com.example.banki.modules.employee.model.Employee;
@@ -14,14 +15,17 @@ public class BankBranchService {
 
     private final BankBranchRepository bankBranchRepository;
     private final EmployeeRepository employeeRepository;
+    private final BankBranchConvertor bankBranchConvertor;
 
-    public BankBranchService(BankBranchRepository bankBranchRepository, EmployeeRepository employeeRepository) {
+    public BankBranchService(BankBranchRepository bankBranchRepository, EmployeeRepository employeeRepository, BankBranchConvertor bankBranchConvertor) {
         this.bankBranchRepository = bankBranchRepository;
         this.employeeRepository = employeeRepository;
+        this.bankBranchConvertor = bankBranchConvertor;
     }
 
-    public BankBranch save(BankBranch bankBranch) {
-        return this.bankBranchRepository.save(bankBranch);
+    public String save(BankBranch bankBranch) {
+        bankBranchRepository.save(bankBranch);
+        return bankBranchConvertor.dtoForSave(bankBranch);
     }
 
     public void delete(int id) {

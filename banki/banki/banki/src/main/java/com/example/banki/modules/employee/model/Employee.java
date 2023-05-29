@@ -1,6 +1,14 @@
 package com.example.banki.modules.employee.model;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
+@Data
+@AllArgsConstructor(staticName = "build")
+@NoArgsConstructor
 @Entity
 @Table
 public class Employee {
@@ -8,47 +16,11 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NotBlank(message = "name shouldn't be null")
+    @Pattern(regexp = "^[a-zA-Z\\s]*$", message = " Do not use characters ")
     private String name;
+    @Pattern(regexp = "^[a-zA-Z\\s]*$", message = " Do not use characters ")
+    @NotBlank(message = "family shouldn't be null")
     private String family;
 
-    public Employee() {
-    }
-
-    public Employee(String name, String family) {
-        this.name = name;
-        this.family = family;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getFamily() {
-        return family;
-    }
-
-    public void setFamily(String family) {
-        this.family = family;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", family='" + family + '\'' +
-                '}';
-    }
 }

@@ -21,7 +21,7 @@ public class BankBranchController {
 
     @PostMapping("/new")
     @ResponseBody
-    public BankBranch CreateBranch(@RequestBody BankBranch bankBranch) {
+    public String CreateBranch(@RequestBody BankBranch bankBranch) {
         return bankBranchService.save(bankBranch);
     }
 
@@ -40,6 +40,7 @@ public class BankBranchController {
     @GetMapping("/get/emp/{id}")
     @ResponseBody
     List<Employee> getEmployyesById(@PathVariable int id) {
+
         return bankBranchService.getEmployeesByBankId(id);
     }
 
