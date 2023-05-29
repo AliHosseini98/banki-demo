@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 public class BaseEntity {
     @Id
     @SequenceGenerator(initialValue = 100,name = "number")
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "number")
+    @GeneratedValue(strategy = GenerationType.IDENTITY , generator = "number")
     private int id ;
 
     @CreationTimestamp

@@ -1,5 +1,6 @@
 package com.example.banki.modules.account.model;
 
+import com.example.banki.modules.BaseEntity;
 import com.example.banki.modules.bankBranch.model.BankBranch;
 import com.example.banki.modules.customer.model.Customer;
 import lombok.AllArgsConstructor;
@@ -14,10 +15,10 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Account {
+public class Account  {
     @Id
     @Column(name = "account_number")
-    @SequenceGenerator(name = "acNum", initialValue = 1000)
+    @SequenceGenerator(name = "acNum", initialValue = 5000)
     @GeneratedValue(generator = "acNum")
     private int accNumber;
 

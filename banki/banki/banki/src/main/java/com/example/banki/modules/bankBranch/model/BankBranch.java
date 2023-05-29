@@ -1,5 +1,6 @@
 package com.example.banki.modules.bankBranch.model;
 
+import com.example.banki.modules.BaseEntity;
 import com.example.banki.modules.employee.model.Employee;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,10 +16,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class BankBranch {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class BankBranch extends BaseEntity {
+
     private String name;
     private String address;
 

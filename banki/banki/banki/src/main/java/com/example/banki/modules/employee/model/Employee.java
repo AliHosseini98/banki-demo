@@ -13,9 +13,7 @@ import javax.validation.constraints.Pattern;
 @Entity
 @Table
 public class Employee extends BaseEntity {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private int id;
+
 
     @NotBlank(message = "name shouldn't be null")
     @Pattern(regexp = "^[a-zA-Z\\s]*$", message = " Do not use characters ")

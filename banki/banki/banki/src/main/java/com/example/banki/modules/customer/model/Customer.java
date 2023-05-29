@@ -17,11 +17,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor(staticName = "build")
 @NoArgsConstructor
-public class Customer {
-
-    @Id
-    @GeneratedValue
-    int id;
+public class Customer extends BaseEntity {
 
     @NotBlank(message = "username shouldn't be null")
     @Pattern(regexp = "^[a-zA-Z\\s]*$", message = " Do not use characters ")
