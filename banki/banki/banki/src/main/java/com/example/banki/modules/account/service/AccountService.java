@@ -34,14 +34,15 @@ public class AccountService {
     }
 
 
+    @Transactional
     public Customer transferToTheAccount(int accSource, double amount, int accDestination) {
-
         Account source = accountRepository.findById(accSource).get();
         Account destination = accountRepository.findById(accDestination).get();
         if (source.getCustomer().isEnabled() == true && destination.getCustomer().isEnabled() == true &&
                 source.getCurrentBalance() > amount) {
             double deductionAcc = source.getCurrentBalance() - amount;
             source.setCurrentBalance(deductionAcc);
+            accountRepository.save(source);
             double addAccount = destination.getCurrentBalance() + amount;
             destination.setCurrentBalance(addAccount);
             accountRepository.save(destination);
