@@ -1,5 +1,6 @@
 package com.example.banki.modules.customer.model;
 
+import com.example.banki.modules.BaseEntity;
 import com.example.banki.modules.account.model.Account;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -18,10 +19,10 @@ import java.util.List;
 @NoArgsConstructor
 public class Customer {
 
-
     @Id
     @GeneratedValue
-    private int id;
+    int id;
+
     @NotBlank(message = "username shouldn't be null")
     @Pattern(regexp = "^[a-zA-Z\\s]*$", message = " Do not use characters ")
     private String name;
@@ -49,7 +50,6 @@ public class Customer {
     public Customer(String name, String family,
                     String phoneNumber, Long card_id, String email,
                     List<Account> accounts) {
-        this.id = 0;
         this.name = name;
         this.family = family;
         this.enabled = enabled;

@@ -49,7 +49,8 @@ public class AccountService {
             new RuntimeException("Your account balance is insufficient");
         }
         Account print = accountRepository.findById(accDestination).orElseThrow(() -> new RuntimeException("Your ID is not available"));
-        Customer printCus = customerRepository.findById(print.getCustomer().getId()).orElseThrow(() -> new RuntimeException("Your ID is not available"));
+        Customer printCus = customerRepository.findById(print.getCustomer().getId()).
+                orElseThrow(() -> new RuntimeException("Your ID is not available"));
         printCus.setAccounts(Collections.singletonList(print));
 
         return printCus;

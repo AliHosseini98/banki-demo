@@ -1,4 +1,5 @@
 package com.example.banki.modules.employee.model;
+import com.example.banki.modules.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,10 +12,10 @@ import javax.validation.constraints.Pattern;
 @NoArgsConstructor
 @Entity
 @Table
-public class Employee {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class Employee extends BaseEntity {
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private int id;
 
     @NotBlank(message = "name shouldn't be null")
     @Pattern(regexp = "^[a-zA-Z\\s]*$", message = " Do not use characters ")
