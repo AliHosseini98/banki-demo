@@ -25,8 +25,8 @@ public class BankBranchController {
         return bankBranchService.save(bankBranch);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable int id) {
+    @DeleteMapping({"/",""})
+    public ResponseEntity<?> delete(@RequestParam int id) {
         bankBranchService.delete(id);
         return ResponseEntity.ok().build();
     }
