@@ -25,6 +25,7 @@ public class Customer {
     @NotBlank(message = "username shouldn't be null")
     @Pattern(regexp = "^[a-zA-Z\\s]*$", message = " Do not use characters ")
     private String name;
+    @Pattern(regexp = "^[a-zA-Z\\s]*$", message = " Do not use characters ")
     @NotBlank(message = "family shouldn't be null")
     private String family;
     private boolean enabled = true;
@@ -45,5 +46,16 @@ public class Customer {
     @OneToMany
     private List<Account> accounts;
 
-
+    public Customer(String name, String family,
+                    String phoneNumber, Long card_id, String email,
+                    List<Account> accounts) {
+        this.id = 0;
+        this.name = name;
+        this.family = family;
+        this.enabled = enabled;
+        this.phoneNumber = phoneNumber;
+        this.card_id = card_id;
+        this.email = email;
+        this.accounts = null ;
+    }
 }

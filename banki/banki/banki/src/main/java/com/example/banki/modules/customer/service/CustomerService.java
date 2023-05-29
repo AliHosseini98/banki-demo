@@ -21,9 +21,9 @@ public class CustomerService {
 
     //check method for insert id for search
     public CustomerDTO save(Customer customer) {
-        CustomerDTO dto = convertor.entityToDto(customer);
         customerRepository.save(customer);
-        return dto;
+        return convertor.entityToDto(customer);
+
     }
 
     //check method
@@ -42,7 +42,6 @@ public class CustomerService {
     public void delete(int id) {
         customerRepository.deleteById(id);
     }
-
 
     public List<CustomerDTO> getAllCustomers() {
         List<CustomerDTO> customerDTOList = convertor.customerDTOList(customerRepository.findAll());
