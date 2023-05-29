@@ -12,7 +12,7 @@ import java.util.Date;
 @Entity
 @Table
 @Data
-@AllArgsConstructor(staticName = "build")
+@AllArgsConstructor
 @NoArgsConstructor
 public class Account {
     @Id
