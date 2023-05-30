@@ -2,9 +2,7 @@ package com.example.banki.modules.transaction.model;
 
 import com.example.banki.modules.BaseEntity;
 import com.example.banki.modules.account.model.Account;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -14,11 +12,9 @@ import java.util.UUID;
 @Entity
 @Table
 @Data
-@NoArgsConstructor
 public class Transaction extends BaseEntity {
 
-    @GeneratedValue
-    UUID transactionId;
+    UUID transactionId=UUID.randomUUID();
     @ManyToOne
     Account source;
 
@@ -29,14 +25,17 @@ public class Transaction extends BaseEntity {
     @Column(updatable = false)
     private LocalDateTime creationDate;
 
+    public Transaction() {
+    }
 
-public Transaction (Account source , Account destination , double amount){
-    this.source = source;
-    this.destination = destination;
-    this.amount = amount;
-    this.creationDate = LocalDateTime.now();
+    public Transaction(Account source, Account destination, double amount) {
 
-}
+        this.source = source;
+        this.destination = destination;
+        this.amount = amount;
+        this.creationDate = LocalDateTime.now();
+
+    }
 }
 
 

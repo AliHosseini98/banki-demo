@@ -4,14 +4,11 @@ import com.example.banki.modules.BaseEntity;
 import com.example.banki.modules.bankBranch.model.BankBranch;
 import com.example.banki.modules.customer.model.Customer;
 import com.example.banki.modules.transaction.model.Transaction;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -20,7 +17,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Account {
+public class Account  {
+
     @Id
     @Column(name = "account_number")
     @SequenceGenerator(name = "acNum", initialValue = 5000)
@@ -30,9 +28,8 @@ public class Account {
     //creat valid
     private double currentBalance;
 
-    private Date date;
     @ManyToOne
-    private Customer customer;
+    private Customer author;
 
     @ManyToOne
     private BankBranch bankBranch;
@@ -41,10 +38,9 @@ public class Account {
     List<Transaction> transactions;
 
 
-    public Account(Customer customer, BankBranch bankBranch) {
+    public Account(Customer author, BankBranch bankBranch) {
         this.currentBalance = 0;
-        this.date = getDate();
-        this.customer = customer;
+        this.author = author;
         this.bankBranch = bankBranch;
     }
 

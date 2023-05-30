@@ -12,10 +12,9 @@ public class AccountConvertor {
         AccountDTO dto = new AccountDTO();
         dto.setAccNumber(account.getAccNumber());
         dto.setCurrentBalance(account.getCurrentBalance());
-        dto.setDate(account.getDate());
-        dto.setCustomer(String.valueOf(account.getCustomer().getId() + "\n"
-                + account.getCustomer().getName() + "\n"
-                + account.getCustomer().getFamily()));
+        dto.setCustomer(String.valueOf(account.getAuthor().getId() + "\n"
+                + account.getAuthor().getName() + "\n"
+                + account.getAuthor().getFamily()));
         dto.setBankBranch(String.valueOf("branch code is : " + account.getBankBranch().getId() + "\n"
                 + "bank name is : " + account.getBankBranch().getName()));
         return dto;
