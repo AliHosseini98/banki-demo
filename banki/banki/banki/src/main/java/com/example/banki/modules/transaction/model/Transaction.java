@@ -1,49 +1,44 @@
 package com.example.banki.modules.transaction.model;
 
+import com.example.banki.modules.BaseEntity;
 import com.example.banki.modules.account.model.Account;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table
-public class Transaction {
-    @Id
-    @Column(name = "transient_id")
+@Data
+@NoArgsConstructor
+public class Transaction extends BaseEntity {
+
     @GeneratedValue
-    private int transactionId;
+    UUID transactionId;
+    @ManyToOne
+    Account source;
 
-//    @ManyToOne
-//    private Account SourceAccNum ;
-//    @ManyToOne
-//    private Account DestAccNum;
-
+    @ManyToOne
+    Account destination;
+    double amount;
     @CreationTimestamp
     @Column(updatable = false)
     private LocalDateTime creationDate;
 
-    @UpdateTimestamp
-    private LocalDateTime lastModifiedDate;
 
+public Transaction (Account source , Account destination , double amount){
+    this.source = source;
+    this.destination = destination;
+    this.amount = amount;
+    this.creationDate = LocalDateTime.now();
 
-    @ManyToOne(optional = false)
-    private Account accounts;
-
-    public Account getAccounts() {
-        return accounts;
-    }
-
-    public void setAccounts(Account accounts) {
-        this.accounts = accounts;
-    }
+}
 }
 
 
 
-/*- Source account number
-        - Destination account number
-        - Transaction amount
-        - Transaction date
-        - Transaction type (withdrawal or deposit) */
+
