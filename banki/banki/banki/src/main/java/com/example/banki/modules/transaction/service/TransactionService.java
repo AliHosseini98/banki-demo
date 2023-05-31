@@ -25,10 +25,12 @@ public class TransactionService {
         if (src.getAuthor().isEnabled() && des.getAuthor().isEnabled() == true) {
             if (src.getCurrentBalance() > transaction.getAmount()) {
                 double deductionSrc = src.getCurrentBalance() - transaction.getAmount();
-                src.setCurrentBalance(deductionSrc);
                 accountRepository.save(src);
+                src.setCurrentBalance(deductionSrc);
                 double addAccount = des.getCurrentBalance() + transaction.getAmount();
+                des.setCurrentBalance(addAccount);
                 accountRepository.save(des);
+                transactionRepository.save(transaction);
                 String result = "The transaction was completed successfully" + "\n"
                         + "Transaction tracking code: " + transaction.getTransactionId() + "\n"
                         + "Destination account number :" + String.valueOf(des.getAccNumber()) + "\n"
