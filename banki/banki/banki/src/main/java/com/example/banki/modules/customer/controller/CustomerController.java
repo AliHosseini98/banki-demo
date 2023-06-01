@@ -45,4 +45,18 @@ public class CustomerController {
         return customerService.getAllCustomers();
     }
 
+
+    //move to cus
+    @PutMapping ("/unblock/{cusId}")
+    public void accountBlocked(@PathVariable int cusId) {
+        customerService.accountBlocked(cusId);
+    }
+
+    //move to cus
+    @PutMapping("/block/{cusId}")
+    public void accountUnblocked(@PathVariable int cusId) {
+        customerService.unblockAccount(cusId);
+    }
+
+
 }

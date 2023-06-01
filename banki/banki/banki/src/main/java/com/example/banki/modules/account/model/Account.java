@@ -14,10 +14,8 @@ import java.util.List;
 @Entity
 @Table
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-
-public class Account  {
+public class Account {
 
     @Id
     @Column(name = "account_number")
@@ -28,15 +26,16 @@ public class Account  {
     //creat valid
     private double currentBalance;
 
+
+
+    @OneToMany
+    List<Transaction> transactions;
+
     @ManyToOne
     private Customer author;
 
     @ManyToOne
     private BankBranch bankBranch;
-
-    @OneToMany
-    List<Transaction> transactions;
-
 
     public Account(Customer author, BankBranch bankBranch) {
         this.currentBalance = 0;

@@ -22,7 +22,7 @@ public class TransactionService {
     public String Card_by_card(Transaction transaction) {
         Account src = transaction.getSource();
         Account des = transaction.getDestination();
-        if (src.getAuthor().isEnabled() && des.getAuthor().isEnabled() == true) {
+        if (src.getAuthor().isEnabled() && des.getAuthor().isEnabled()) {
             if (src.getCurrentBalance() > transaction.getAmount()) {
                 double deductionSrc = src.getCurrentBalance() - transaction.getAmount();
                 accountRepository.save(src);
@@ -30,24 +30,51 @@ public class TransactionService {
                 double addAccount = des.getCurrentBalance() + transaction.getAmount();
                 des.setCurrentBalance(addAccount);
                 accountRepository.save(des);
-                transactionRepository.save(transaction);
-                String result = "The transaction was completed successfully" + "\n"
+                //need to save transaction?
+                return "The transaction was completed successfully" + "\n"
                         + "Transaction tracking code: " + transaction.getTransactionId() + "\n"
-                        + "Destination account number :" + String.valueOf(des.getAccNumber()) + "\n"
-                        + "Source account number :" + String.valueOf(src.getAccNumber()) + "\n"
-                        + "Your current balance: " + String.valueOf(src.getCurrentBalance());
-                return result;
+                        + "Destination account number :" + (des.getAccNumber()) + "\n"
+                        + "Source account number :" + (src.getAccNumber()) + "\n"
+                        + "Your current balance: " +(src.getCurrentBalance())+ "\n"
+                        + "Date :" + transaction.getCreationDate();
             }
         }
         return "Sorry, error in operation";
     }
 
-    public Transaction creatTransaction(int accIdSrc , int accIdDes , double amount ){
-        Account src = accountRepository.findById(accIdSrc).get();
-        Account des = accountRepository.findById(accIdDes).get();
-
-        Transaction transaction = new Transaction(src,des,amount);
-        return transaction;
+    public Transaction creatTransaction(Transaction transaction) {
+        return transactionRepository.save(transaction);
     }
+
+
+    public String deposit(Transaction transaction) {
+        Account des = transaction.getDestination();
+        if (des.getAuthor().isEnabled()) {
+            des.setCurrentBalance(des.getCurrentBalance() + transaction.getAmount());
+            accountRepository.save(des);
+            return "The deposit transaction was completed successfully" + "\n"
+                    + "Transaction tracking code: " + transaction.getTransactionId() + "\n"
+                    + "The amount of " + transaction.getAmount() + "\n"
+                    + "transferred to the account of : " + (des.getAccNumber()) + "." + "\n"
+                    + "Date :" + transaction.getCreationDate();
+        }return "It is not possible to deposit";
+    }
+
+        public String withdraw (Transaction transaction){
+        Account source = transaction.getSource();
+            if (source.getAuthor().isEnabled()) {
+                source.setCurrentBalance(source.getCurrentBalance() - transaction.getAmount());
+                accountRepository.save(source);
+
+                return "The withdraw transaction was completed successfully" + "\n"
+                        + "Transaction tracking code: " + transaction.getTransactionId() + "\n"
+                        + "The amount of " + transaction.getAmount() + "\n"
+                        + "transferred to the account of : " + (source.getAccNumber()) + "." + "\n"
+                        + "Date :" + transaction.getCreationDate();
+            }return "It is not possible to withdraw";
+        }
+
+//    public String getBankStatement (int accId){}
+
 
 }
