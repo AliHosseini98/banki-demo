@@ -31,10 +31,8 @@ public class AccountController {
         return accountService.getAllAccounts();
     }
 
-//    @GetMapping("/balance/{cardId}")
-//    public ResponseEntity<List<Account>> getAccounts(@PathVariable Long cardId){
-//        return ResponseEntity.ok(accountService.getAccountsBalance(cardId));
-//    }
+
+
 
 
 }

@@ -41,13 +41,6 @@ public class AccountService {
     }
 
 
-//    public List<Account> getAccountsBalance(Long cardId ) {
-//        Customer customer = customerRepository.findByCard_id(cardId);
-//        return accountRepository.findAccountsByAuthor(customer);
-//    }
 
-//    public String getBankStatement (int accId){
-//
-//
-//    }
+
 }

@@ -9,5 +9,4 @@ import java.util.List;
 import java.util.Optional;
 
 public interface AccountRepository extends JpaRepository<Account, Integer> {
-//    List<Account> findAccountsByAuthor(Customer customer);
 }
