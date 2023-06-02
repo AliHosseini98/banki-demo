@@ -2,10 +2,13 @@ package com.example.banki.modules.transaction.controller;
 
 import com.example.banki.modules.account.model.Account;
 import com.example.banki.modules.account.service.AccountService;
+import com.example.banki.modules.transaction.TransactionDTO;
 import com.example.banki.modules.transaction.model.Transaction;
 import com.example.banki.modules.transaction.service.TransactionService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class TransactionController {
@@ -41,10 +44,13 @@ public class TransactionController {
         Account src = accountService.getById(accSource);
         Account des = accountService.getById(accDestination);
         Transaction tr = new Transaction(src, des, amount);
-        return ResponseEntity.ok(transactionService.Card_by_card(tr));
+        return ResponseEntity.ok(transactionService.Card_by_card(transactionService.creatTransaction(tr)));
     }
 
-
+    @GetMapping("/get/transactions")
+    public List<TransactionDTO> getAllTransaction(){
+        return transactionService.getTransactions();
+    }
 
 
 }

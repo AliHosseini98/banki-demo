@@ -4,6 +4,7 @@ import com.example.banki.modules.BaseEntity;
 import com.example.banki.modules.bankBranch.model.BankBranch;
 import com.example.banki.modules.customer.model.Customer;
 import com.example.banki.modules.transaction.model.Transaction;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,7 +28,7 @@ public class Account {
     private double currentBalance;
 
 
-
+    @JsonIgnore
     @OneToMany
     List<Transaction> transactions;
 

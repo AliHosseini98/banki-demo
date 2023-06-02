@@ -2,20 +2,26 @@ package com.example.banki.modules.transaction.service;
 
 import com.example.banki.modules.account.model.Account;
 import com.example.banki.modules.account.repository.AccountRepository;
+import com.example.banki.modules.transaction.TransactionConvertor;
+import com.example.banki.modules.transaction.TransactionDTO;
 import com.example.banki.modules.transaction.model.Transaction;
 import com.example.banki.modules.transaction.repository.TransactionRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.text.DecimalFormat;
+import java.util.List;
 
 @Service
 public class TransactionService {
     private final TransactionRepository transactionRepository;
     private final AccountRepository accountRepository;
+    private final TransactionConvertor transactionConvertor;
 
-    public TransactionService(TransactionRepository transactionRepository, AccountRepository accountRepository) {
+    public TransactionService(TransactionRepository transactionRepository, AccountRepository accountRepository, TransactionConvertor transactionConvertor) {
         this.transactionRepository = transactionRepository;
         this.accountRepository = accountRepository;
+        this.transactionConvertor = transactionConvertor;
     }
 
     @Transactional
@@ -31,11 +37,13 @@ public class TransactionService {
                 des.setCurrentBalance(addAccount);
                 accountRepository.save(des);
                 //need to save transaction?
+                DecimalFormat df = new DecimalFormat("#,###.###");
+                String formattedBalance = df.format(src.getCurrentBalance());
                 return "The transaction was completed successfully" + "\n"
                         + "Transaction tracking code: " + transaction.getTransactionId() + "\n"
                         + "Destination account number :" + (des.getAccNumber()) + "\n"
                         + "Source account number :" + (src.getAccNumber()) + "\n"
-                        + "Your current balance: " +(src.getCurrentBalance())+ "\n"
+                        + "Your current balance: " +(formattedBalance)+ "\n"
                         + "Date :" + transaction.getCreationDate();
             }
         }
@@ -74,7 +82,14 @@ public class TransactionService {
             }return "It is not possible to withdraw";
         }
 
-//    public String getBankStatement (int accId){}
 
+        public List<TransactionDTO> getTransactions(){
+
+        return transactionConvertor.transactionDTOList(transactionRepository.findAll());
+        }
+
+//        public List<TransactionDTO> getTransactionByAccountId(int id){
+//
+//        }
 
 }

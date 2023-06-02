@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpStatusCodeException;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -30,7 +31,7 @@ public class CustomerController {
 
     @PutMapping("/update")
     public ResponseEntity<CustomerDTO> updateCustomer(@RequestBody Customer customer) {
-        return new ResponseEntity<>(customerService.update(customer),HttpStatus.CREATED);
+        return new ResponseEntity<>(customerService.update(customer), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/delete/{id}")
@@ -47,15 +48,15 @@ public class CustomerController {
 
 
     //move to cus
-    @PutMapping ("/unblock/{cusId}")
-    public void accountBlocked(@PathVariable int cusId) {
-        customerService.accountBlocked(cusId);
+    @PutMapping("/block/{cusId}")
+    public void Blocked(@PathVariable int cusId) {
+        customerService.blockedCustomer(cusId);
     }
 
     //move to cus
-    @PutMapping("/block/{cusId}")
-    public void accountUnblocked(@PathVariable int cusId) {
-        customerService.unblockAccount(cusId);
+    @PutMapping("/unblock/{cusId}")
+    public void unBlocked(@PathVariable int cusId) {
+        customerService.unBlockCustomer(cusId);
     }
 
 

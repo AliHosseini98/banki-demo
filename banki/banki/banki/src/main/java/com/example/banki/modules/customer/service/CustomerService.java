@@ -48,13 +48,13 @@ public class CustomerService {
         return customerDTOList;
     }
 
-    public void accountBlocked(int cusId) {
+    public void blockedCustomer(int cusId) {
         Customer bl = customerRepository.findById(cusId).get();
         bl.setEnabled(false);
         customerRepository.save(bl);
     }
 
-    public void unblockAccount(int cusId) {
+    public void unBlockCustomer(int cusId) {
         Customer unbl = customerRepository.findById(cusId).get();
         unbl.setEnabled(true);
         customerRepository.save(unbl);
