@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class TransactionService {
@@ -43,7 +45,7 @@ public class TransactionService {
                         + "Transaction tracking code: " + transaction.getTransactionId() + "\n"
                         + "Destination account number :" + (des.getAccNumber()) + "\n"
                         + "Source account number :" + (src.getAccNumber()) + "\n"
-                        + "Your current balance: " +(formattedBalance)+ "\n"
+                        + "Your current balance: " + (formattedBalance) + "\n"
                         + "Date :" + transaction.getCreationDate();
             }
         }
@@ -65,31 +67,50 @@ public class TransactionService {
                     + "The amount of " + transaction.getAmount() + "\n"
                     + "transferred to the account of : " + (des.getAccNumber()) + "." + "\n"
                     + "Date :" + transaction.getCreationDate();
-        }return "It is not possible to deposit";
+        }
+        return "It is not possible to deposit";
     }
 
-        public String withdraw (Transaction transaction){
+    public String withdraw(Transaction transaction) {
         Account source = transaction.getSource();
-            if (source.getAuthor().isEnabled()) {
-                source.setCurrentBalance(source.getCurrentBalance() - transaction.getAmount());
-                accountRepository.save(source);
+        if (source.getAuthor().isEnabled()) {
+            source.setCurrentBalance(source.getCurrentBalance() - transaction.getAmount());
+            accountRepository.save(source);
 
-                return "The withdraw transaction was completed successfully" + "\n"
-                        + "Transaction tracking code: " + transaction.getTransactionId() + "\n"
-                        + "The amount of " + transaction.getAmount() + "\n"
-                        + "transferred to the account of : " + (source.getAccNumber()) + "." + "\n"
-                        + "Date :" + transaction.getCreationDate();
-            }return "It is not possible to withdraw";
+            return "The withdraw transaction was completed successfully" + "\n"
+                    + "Transaction tracking code: " + transaction.getTransactionId() + "\n"
+                    + "The amount of " + transaction.getAmount() + "\n"
+                    + "transferred to the account of : " + (source.getAccNumber()) + "." + "\n"
+                    + "Date :" + transaction.getCreationDate();
         }
+        return "It is not possible to withdraw";
+    }
 
 
-        public List<TransactionDTO> getTransactions(){
+    public List<TransactionDTO> getTransactions() {
 
         return transactionConvertor.transactionDTOList(transactionRepository.findAll());
-        }
+    }
 
-//        public List<TransactionDTO> getTransactionByAccountId(int id){
-//
-//        }
 
+    public List<TransactionDTO> getSourceTransactionsByCardId(Long card) {
+        return transactionConvertor.transactionDTOList(transactionRepository.findAllSourceByCardId(card));
+    }
+
+
+    public List<TransactionDTO> getDestinationTransactionsByCardId(Long card) {
+        return transactionConvertor.transactionDTOList(transactionRepository.findAllDestinationByCardId(card));
+    }
+
+
+    public TransactionDTO getByUUID(UUID uuid){
+        return transactionConvertor.entityToDto(transactionRepository.findByTransactionId(uuid));
+    }
+
+    public List<TransactionDTO> getSourceAndDestinationByCardId (Long cardId ){
+        List<TransactionDTO> all = new ArrayList<>();
+        all.addAll(transactionConvertor.transactionDTOList(transactionRepository.findAllSourceByCardId(cardId)));
+        all.addAll(transactionConvertor.transactionDTOList(transactionRepository.findAllDestinationByCardId(cardId)));
+        return all;
+    }
 }
