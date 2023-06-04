@@ -3,6 +3,7 @@ package com.example.banki.modules.employee.controller;
 import com.example.banki.modules.employee.EmployeeDTO;
 import com.example.banki.modules.employee.model.Employee;
 import com.example.banki.modules.employee.service.EmployeeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/employee")
+@Slf4j
 public class EmployeeController {
     private final EmployeeService employeeService;
 

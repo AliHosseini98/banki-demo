@@ -3,6 +3,7 @@ package com.example.banki.modules.bankBranch.controller;
 import com.example.banki.modules.bankBranch.model.BankBranch;
 import com.example.banki.modules.bankBranch.service.BankBranchService;
 import com.example.banki.modules.employee.model.Employee;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/bank")
+@Slf4j
 public class BankBranchController {
     private final BankBranchService bankBranchService;
 

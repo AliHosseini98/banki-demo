@@ -80,6 +80,29 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.ibm.icu/icu4j -->
+        <dependency>
+            <groupId>com.ibm.icu</groupId>
+            <artifactId>icu4j</artifactId>
+            <version>73.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.eloyzone</groupId>
+            <artifactId>jalali-calendar</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.mfathi91</groupId>
+            <artifactId>persian-date-time</artifactId>
+            <version>4.2.1</version>
+        </dependency>
+<!--        //creat exceptionCode-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

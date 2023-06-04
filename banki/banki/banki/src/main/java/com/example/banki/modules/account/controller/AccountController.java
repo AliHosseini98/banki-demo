@@ -5,6 +5,7 @@ import com.example.banki.modules.account.service.AccountService;
 import com.example.banki.modules.customer.model.Customer;
 import com.example.banki.modules.transaction.model.Transaction;
 import com.example.banki.modules.transaction.service.TransactionService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/account")
+@Slf4j
 public class AccountController {
     private final AccountService accountService;
     private final TransactionService transactionService;
@@ -28,6 +30,7 @@ public class AccountController {
 
     @GetMapping("/get/accounts")
     public List<Account> getAllAccounts() {
+
         return accountService.getAllAccounts();
     }
 

@@ -10,7 +10,8 @@ import java.util.stream.Collectors;
 public class CustomerConvertor {
 
     public CustomerDTO entityToDto(Customer customer){
-        CustomerDTO dto = CustomerDTO.build(customer.getId(),customer.getCard_id(), customer.getName(),
+        CustomerDTO dto = CustomerDTO.build(customer.getId(),customer.getCard_id(),
+                customer.getName(),
                 customer.getFamily(),customer.getPhoneNumber(),customer.getEmail());
         return dto;
 
