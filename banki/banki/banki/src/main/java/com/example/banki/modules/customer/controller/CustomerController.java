@@ -1,4 +1,5 @@
 package com.example.banki.modules.customer.controller;
+
 import com.example.banki.modules.customer.CustomerDTO;
 import com.example.banki.modules.customer.model.Customer;
 import com.example.banki.modules.customer.service.CustomerService;
@@ -14,7 +15,9 @@ import org.springframework.web.bind.annotation.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 import java.util.List;
+@CrossOrigin
 
 @Controller
 @RequestMapping("/customer")
@@ -33,13 +37,14 @@ public class CustomerController {
 
     private CustomerService customerService;
     private final HttpServletRequest request;
+
     @Autowired
     public CustomerController(CustomerService customerService, HttpServletRequest request) {
         this.customerService = customerService;
         this.request = request;
     }
 
-
+    @CrossOrigin
     @PostMapping("/new")
     public ResponseEntity<CustomerDTO> registerCustomer(@Valid @RequestBody Customer customer) {
         String ipAddress = request.getRemoteAddr();
