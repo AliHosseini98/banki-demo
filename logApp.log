@@ -1,0 +1,312 @@
+2023-06-06 09:06:29,441 INFO com.example.banki.BankiApplication [main] Starting BankiApplication on DESKTOP-REMD4TV with PID 13232 (C:\Users\moneazy\Desktop\project\222222\222222\banki-demo\banki\banki\banki\target\classes started by moneazy in C:\Users\moneazy\Desktop\project\222222\222222\banki-demo)
+2023-06-06 09:06:29,452 INFO com.example.banki.BankiApplication [main] No active profile set, falling back to default profiles: default
+2023-06-06 09:06:30,976 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-06-06 09:06:30,977 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2023-06-06 09:06:31,086 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-06-06 09:06:31,240 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-06-06 09:06:31,327 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-06-06 09:06:31,428 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2023-06-06 09:06:31,586 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2023-06-06 09:06:31,589 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2023-06-06 09:06:31,757 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2023-06-06 09:06:31,911 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-06 09:06:31,928 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [main] HHH000422: Disabling contextual LOB creation as connection was null
+2023-06-06 09:06:31,934 INFO org.hibernate.type.BasicTypeRegistry [main] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@7899de11
+2023-06-06 09:06:33,593 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [main] HHH000397: Using ASTQueryTranslatorFactory
+2023-06-06 09:06:34,161 ERROR org.apache.catalina.util.LifecycleBase [main] Failed to start component [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:296)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.example.banki.BankiApplication.main(BankiApplication.java:10)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:438)
+	at sun.nio.ch.Net.bind(Net.java:430)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:225)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+2023-06-06 09:06:34,164 INFO org.apache.catalina.core.StandardService [main] Stopping service [Tomcat]
+2023-06-06 09:06:34,174 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2023-06-06 09:06:34,179 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2023-06-06 09:06:34,182 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2023-06-06 09:07:06,418 INFO com.example.banki.BankiApplication [main] Starting BankiApplication on DESKTOP-REMD4TV with PID 5592 (C:\Users\moneazy\Desktop\project\222222\222222\banki-demo\banki\banki\banki\target\classes started by moneazy in C:\Users\moneazy\Desktop\project\222222\222222\banki-demo)
+2023-06-06 09:07:06,422 INFO com.example.banki.BankiApplication [main] No active profile set, falling back to default profiles: default
+2023-06-06 09:07:07,679 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-06-06 09:07:07,679 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2023-06-06 09:07:07,794 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-06-06 09:07:07,938 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-06-06 09:07:08,020 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-06-06 09:07:08,064 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2023-06-06 09:07:08,180 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2023-06-06 09:07:08,201 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2023-06-06 09:07:08,343 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2023-06-06 09:07:08,541 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-06 09:07:08,556 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [main] HHH000422: Disabling contextual LOB creation as connection was null
+2023-06-06 09:07:08,561 INFO org.hibernate.type.BasicTypeRegistry [main] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@fd9ebde
+2023-06-06 09:07:09,762 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [main] HHH000397: Using ASTQueryTranslatorFactory
+2023-06-06 09:07:10,284 INFO com.example.banki.BankiApplication [main] Started BankiApplication in 4.18 seconds (JVM running for 4.841)
+2023-06-06 10:04:26,426 INFO com.zaxxer.hikari.HikariDataSource [Thread-11] HikariPool-1 - Shutdown initiated...
+2023-06-06 10:04:26,440 INFO com.zaxxer.hikari.HikariDataSource [Thread-11] HikariPool-1 - Shutdown completed.
+2023-06-06 10:04:34,689 INFO com.example.banki.BankiApplication [main] Starting BankiApplication on DESKTOP-REMD4TV with PID 8468 (C:\Users\moneazy\Desktop\project\222222\222222\banki-demo\banki\banki\banki\target\classes started by moneazy in C:\Users\moneazy\Desktop\project\222222\222222\banki-demo)
+2023-06-06 10:04:34,692 INFO com.example.banki.BankiApplication [main] No active profile set, falling back to default profiles: default
+2023-06-06 10:04:35,037 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.banki.BankiApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'accountConvertor' for bean class [com.example.banki.modules.account.model.AccountConvertor] conflicts with existing, non-compatible bean definition of same name and class [com.example.banki.modules.account.AccountConvertor]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.example.banki.BankiApplication.main(BankiApplication.java:10)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'accountConvertor' for bean class [com.example.banki.modules.account.model.AccountConvertor] conflicts with existing, non-compatible bean definition of same name and class [com.example.banki.modules.account.AccountConvertor]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:348)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:286)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:287)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
+	... 13 common frames omitted
+2023-06-06 10:05:53,784 INFO com.example.banki.BankiApplication [main] Starting BankiApplication on DESKTOP-REMD4TV with PID 12324 (C:\Users\moneazy\Desktop\project\222222\222222\banki-demo\banki\banki\banki\target\classes started by moneazy in C:\Users\moneazy\Desktop\project\222222\222222\banki-demo)
+2023-06-06 10:05:53,786 INFO com.example.banki.BankiApplication [main] No active profile set, falling back to default profiles: default
+2023-06-06 10:05:54,072 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.banki.BankiApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'accountConvertor' for bean class [com.example.banki.modules.account.model.AccountConvertor] conflicts with existing, non-compatible bean definition of same name and class [com.example.banki.modules.account.AccountConvertor]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.example.banki.BankiApplication.main(BankiApplication.java:10)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'accountConvertor' for bean class [com.example.banki.modules.account.model.AccountConvertor] conflicts with existing, non-compatible bean definition of same name and class [com.example.banki.modules.account.AccountConvertor]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:348)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:286)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:287)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
+	... 13 common frames omitted
+2023-06-06 10:07:00,387 INFO com.example.banki.BankiApplication [main] Starting BankiApplication on DESKTOP-REMD4TV with PID 5296 (C:\Users\moneazy\Desktop\project\222222\222222\banki-demo\banki\banki\banki\target\classes started by moneazy in C:\Users\moneazy\Desktop\project\222222\222222\banki-demo)
+2023-06-06 10:07:00,389 INFO com.example.banki.BankiApplication [main] No active profile set, falling back to default profiles: default
+2023-06-06 10:07:00,689 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.banki.BankiApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'accountConvertor' for bean class [com.example.banki.modules.account.model.AccountConvertor] conflicts with existing, non-compatible bean definition of same name and class [com.example.banki.modules.account.AccountConvertor]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.example.banki.BankiApplication.main(BankiApplication.java:10)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'accountConvertor' for bean class [com.example.banki.modules.account.model.AccountConvertor] conflicts with existing, non-compatible bean definition of same name and class [com.example.banki.modules.account.AccountConvertor]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:348)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:286)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:287)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
+	... 13 common frames omitted
+2023-06-06 10:11:13,989 INFO com.example.banki.BankiApplication [main] Starting BankiApplication on DESKTOP-REMD4TV with PID 4136 (C:\Users\moneazy\Desktop\project\222222\222222\banki-demo\banki\banki\banki\target\classes started by moneazy in C:\Users\moneazy\Desktop\project\222222\222222\banki-demo)
+2023-06-06 10:11:13,991 INFO com.example.banki.BankiApplication [main] No active profile set, falling back to default profiles: default
+2023-06-06 10:11:15,188 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-06-06 10:11:15,189 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2023-06-06 10:11:15,339 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-06-06 10:11:15,541 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-06-06 10:11:15,633 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-06-06 10:11:15,691 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2023-06-06 10:11:15,829 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2023-06-06 10:11:15,830 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2023-06-06 10:11:15,999 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2023-06-06 10:11:16,160 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-06 10:11:16,176 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [main] HHH000422: Disabling contextual LOB creation as connection was null
+2023-06-06 10:11:16,182 INFO org.hibernate.type.BasicTypeRegistry [main] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6c008c24
+2023-06-06 10:11:17,318 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [main] HHH000397: Using ASTQueryTranslatorFactory
+2023-06-06 10:11:17,888 INFO com.example.banki.BankiApplication [main] Started BankiApplication in 4.191 seconds (JVM running for 4.844)
+2023-06-06 10:12:38,801 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9393-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-06 10:16:44,754 INFO com.zaxxer.hikari.HikariDataSource [Thread-12] HikariPool-1 - Shutdown initiated...
+2023-06-06 10:16:44,759 INFO com.zaxxer.hikari.HikariDataSource [Thread-12] HikariPool-1 - Shutdown completed.
+2023-06-06 10:17:08,716 INFO com.example.banki.BankiApplication [main] Starting BankiApplication on DESKTOP-REMD4TV with PID 13080 (C:\Users\moneazy\Desktop\project\222222\222222\banki-demo\banki\banki\banki\target\classes started by moneazy in C:\Users\moneazy\Desktop\project\222222\222222\banki-demo)
+2023-06-06 10:17:08,720 INFO com.example.banki.BankiApplication [main] No active profile set, falling back to default profiles: default
+2023-06-06 10:17:10,098 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-06-06 10:17:10,099 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2023-06-06 10:17:10,205 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-06-06 10:17:10,351 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-06-06 10:17:10,437 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-06-06 10:17:10,482 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2023-06-06 10:17:10,590 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2023-06-06 10:17:10,591 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2023-06-06 10:17:10,707 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2023-06-06 10:17:10,842 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-06 10:17:10,855 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [main] HHH000422: Disabling contextual LOB creation as connection was null
+2023-06-06 10:17:10,859 INFO org.hibernate.type.BasicTypeRegistry [main] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@7c36db44
+2023-06-06 10:17:11,870 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [main] HHH000397: Using ASTQueryTranslatorFactory
+2023-06-06 10:17:12,403 INFO com.example.banki.BankiApplication [main] Started BankiApplication in 4.097 seconds (JVM running for 4.733)
+2023-06-06 10:17:17,134 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9393-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-06 10:18:18,121 INFO com.zaxxer.hikari.HikariDataSource [Thread-11] HikariPool-1 - Shutdown initiated...
+2023-06-06 10:18:18,125 INFO com.zaxxer.hikari.HikariDataSource [Thread-11] HikariPool-1 - Shutdown completed.
+2023-06-06 10:18:23,480 INFO com.example.banki.BankiApplication [main] Starting BankiApplication on DESKTOP-REMD4TV with PID 12508 (C:\Users\moneazy\Desktop\project\222222\222222\banki-demo\banki\banki\banki\target\classes started by moneazy in C:\Users\moneazy\Desktop\project\222222\222222\banki-demo)
+2023-06-06 10:18:23,482 INFO com.example.banki.BankiApplication [main] No active profile set, falling back to default profiles: default
+2023-06-06 10:18:24,878 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-06-06 10:18:24,878 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2023-06-06 10:18:24,995 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-06-06 10:18:25,160 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-06-06 10:18:25,240 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-06-06 10:18:25,284 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2023-06-06 10:18:25,389 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2023-06-06 10:18:25,390 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2023-06-06 10:18:25,517 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2023-06-06 10:18:25,704 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-06 10:18:25,717 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [main] HHH000422: Disabling contextual LOB creation as connection was null
+2023-06-06 10:18:25,723 INFO org.hibernate.type.BasicTypeRegistry [main] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1bc0d349
+2023-06-06 10:18:26,869 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [main] HHH000397: Using ASTQueryTranslatorFactory
+2023-06-06 10:18:27,455 INFO com.example.banki.BankiApplication [main] Started BankiApplication in 4.275 seconds (JVM running for 4.99)
+2023-06-06 10:18:27,494 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9393-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-06 10:18:52,242 INFO com.zaxxer.hikari.HikariDataSource [Thread-12] HikariPool-1 - Shutdown initiated...
+2023-06-06 10:18:52,247 INFO com.zaxxer.hikari.HikariDataSource [Thread-12] HikariPool-1 - Shutdown completed.
+2023-06-06 10:18:57,550 INFO com.example.banki.BankiApplication [main] Starting BankiApplication on DESKTOP-REMD4TV with PID 5944 (C:\Users\moneazy\Desktop\project\222222\222222\banki-demo\banki\banki\banki\target\classes started by moneazy in C:\Users\moneazy\Desktop\project\222222\222222\banki-demo)
+2023-06-06 10:18:57,552 INFO com.example.banki.BankiApplication [main] No active profile set, falling back to default profiles: default
+2023-06-06 10:18:58,875 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-06-06 10:18:58,876 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2023-06-06 10:18:58,990 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-06-06 10:18:59,160 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-06-06 10:18:59,254 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-06-06 10:18:59,297 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2023-06-06 10:18:59,407 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2023-06-06 10:18:59,408 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2023-06-06 10:18:59,509 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2023-06-06 10:18:59,645 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-06 10:18:59,662 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [main] HHH000422: Disabling contextual LOB creation as connection was null
+2023-06-06 10:18:59,667 INFO org.hibernate.type.BasicTypeRegistry [main] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@fcc6023
+2023-06-06 10:19:00,733 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [main] HHH000397: Using ASTQueryTranslatorFactory
+2023-06-06 10:19:01,343 INFO com.example.banki.BankiApplication [main] Started BankiApplication in 4.098 seconds (JVM running for 4.742)
+2023-06-06 10:19:02,187 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9393-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-06 10:20:12,111 INFO com.zaxxer.hikari.HikariDataSource [Thread-11] HikariPool-1 - Shutdown initiated...
+2023-06-06 10:20:12,114 INFO com.zaxxer.hikari.HikariDataSource [Thread-11] HikariPool-1 - Shutdown completed.
+2023-06-06 10:20:16,904 INFO com.example.banki.BankiApplication [main] Starting BankiApplication on DESKTOP-REMD4TV with PID 4156 (C:\Users\moneazy\Desktop\project\222222\222222\banki-demo\banki\banki\banki\target\classes started by moneazy in C:\Users\moneazy\Desktop\project\222222\222222\banki-demo)
+2023-06-06 10:20:16,906 INFO com.example.banki.BankiApplication [main] No active profile set, falling back to default profiles: default
+2023-06-06 10:20:18,126 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-06-06 10:20:18,126 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2023-06-06 10:20:18,227 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-06-06 10:20:18,354 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-06-06 10:20:18,438 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-06-06 10:20:18,483 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2023-06-06 10:20:18,594 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2023-06-06 10:20:18,596 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2023-06-06 10:20:18,721 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2023-06-06 10:20:18,861 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-06 10:20:18,873 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [main] HHH000422: Disabling contextual LOB creation as connection was null
+2023-06-06 10:20:18,878 INFO org.hibernate.type.BasicTypeRegistry [main] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@f951a7f
+2023-06-06 10:20:19,960 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [main] HHH000397: Using ASTQueryTranslatorFactory
+2023-06-06 10:20:20,482 INFO com.example.banki.BankiApplication [main] Started BankiApplication in 3.888 seconds (JVM running for 4.551)
+2023-06-06 10:20:24,669 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9393-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-06 10:21:11,488 INFO com.zaxxer.hikari.HikariDataSource [Thread-11] HikariPool-1 - Shutdown initiated...
+2023-06-06 10:21:11,491 INFO com.zaxxer.hikari.HikariDataSource [Thread-11] HikariPool-1 - Shutdown completed.
+2023-06-06 10:21:17,175 INFO com.example.banki.BankiApplication [main] Starting BankiApplication on DESKTOP-REMD4TV with PID 8476 (C:\Users\moneazy\Desktop\project\222222\222222\banki-demo\banki\banki\banki\target\classes started by moneazy in C:\Users\moneazy\Desktop\project\222222\222222\banki-demo)
+2023-06-06 10:21:17,177 INFO com.example.banki.BankiApplication [main] No active profile set, falling back to default profiles: default
+2023-06-06 10:21:18,390 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-06-06 10:21:18,390 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2023-06-06 10:21:18,493 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-06-06 10:21:18,625 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-06-06 10:21:18,703 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-06-06 10:21:18,747 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2023-06-06 10:21:18,852 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2023-06-06 10:21:18,855 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2023-06-06 10:21:18,969 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2023-06-06 10:21:19,102 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-06 10:21:19,122 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [main] HHH000422: Disabling contextual LOB creation as connection was null
+2023-06-06 10:21:19,128 INFO org.hibernate.type.BasicTypeRegistry [main] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@216e0771
+2023-06-06 10:21:20,173 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [main] HHH000397: Using ASTQueryTranslatorFactory
+2023-06-06 10:21:20,706 INFO com.example.banki.BankiApplication [main] Started BankiApplication in 3.832 seconds (JVM running for 4.468)
+2023-06-06 10:21:24,272 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9393-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-06 10:24:18,625 INFO com.zaxxer.hikari.HikariDataSource [Thread-11] HikariPool-1 - Shutdown initiated...
+2023-06-06 10:24:18,628 INFO com.zaxxer.hikari.HikariDataSource [Thread-11] HikariPool-1 - Shutdown completed.
+2023-06-06 10:28:23,955 INFO com.example.banki.BankiApplication [main] Starting BankiApplication on DESKTOP-REMD4TV with PID 4612 (C:\Users\moneazy\Desktop\project\222222\222222\banki-demo\banki\banki\banki\target\classes started by moneazy in C:\Users\moneazy\Desktop\project\222222\222222\banki-demo)
+2023-06-06 10:28:23,957 INFO com.example.banki.BankiApplication [main] No active profile set, falling back to default profiles: default
+2023-06-06 10:28:25,128 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-06-06 10:28:25,128 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2023-06-06 10:28:25,264 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-06-06 10:28:25,455 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-06-06 10:28:25,566 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-06-06 10:28:25,628 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2023-06-06 10:28:25,784 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2023-06-06 10:28:25,785 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2023-06-06 10:28:25,915 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2023-06-06 10:28:26,137 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-06 10:28:26,157 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [main] HHH000422: Disabling contextual LOB creation as connection was null
+2023-06-06 10:28:26,164 INFO org.hibernate.type.BasicTypeRegistry [main] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@13d9261f
+2023-06-06 10:28:27,230 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [main] HHH000397: Using ASTQueryTranslatorFactory
+2023-06-06 10:28:27,787 INFO com.example.banki.BankiApplication [main] Started BankiApplication in 4.144 seconds (JVM running for 4.812)
+2023-06-06 10:28:41,902 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9393-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-06 10:42:23,159 INFO com.zaxxer.hikari.HikariDataSource [Thread-12] HikariPool-1 - Shutdown initiated...
+2023-06-06 10:42:23,165 INFO com.zaxxer.hikari.HikariDataSource [Thread-12] HikariPool-1 - Shutdown completed.
