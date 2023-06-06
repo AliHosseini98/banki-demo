@@ -8,8 +8,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -32,8 +34,16 @@ public class Account {
     @OneToMany
     List<Transaction> transactions;
 
+    public LocalDateTime getCreationDate() {
+        return creationDate;
+    }
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    private LocalDateTime creationDate;
     @ManyToOne
     private Customer author;
+
 
     @ManyToOne
     private BankBranch bankBranch;
@@ -42,6 +52,7 @@ public class Account {
         this.currentBalance = 0;
         this.author = author;
         this.bankBranch = bankBranch;
+        this.creationDate = LocalDateTime.now();
     }
 
 
