@@ -40,3 +40,23 @@
 2023-06-04 16:30:09,990 INFO com.example.banki.modules.transaction.controller.TransactionController [http-nio-8080-exec-1] ip address : 0:0:0:0:0:0:0:1request for withdraw : transaction = Transaction(transactionId=c459bb9c-4f88-4eb7-9fc9-c9f74e8ee3b5, source=Account(accNumber=5003, currentBalance=1218.0, transactions=[], author=Customer(name=ali, family=hosseini, enabled=true, phoneNumber=09021600830, card_id=2170272801, email=ali@gmail.com, accounts=[]), bankBranch=BankBranch(name=enghelab, address=Teh, employees=[])), destination=null, amount=8282.0)
 2023-06-04 17:48:37,056 INFO com.zaxxer.hikari.HikariDataSource [Thread-16] HikariPool-1 - Shutdown initiated...
 2023-06-04 17:48:37,076 INFO com.zaxxer.hikari.HikariDataSource [Thread-16] HikariPool-1 - Shutdown completed.
+2023-06-06 13:24:20,523 INFO com.example.banki.BankiApplication [main] Starting BankiApplication on DESKTOP-REMD4TV with PID 9500 (C:\Users\moneazy\Desktop\project\banki-demo\banki\banki\banki\target\classes started by moneazy in C:\Users\moneazy\Desktop\project\banki-demo)
+2023-06-06 13:24:20,525 INFO com.example.banki.BankiApplication [main] No active profile set, falling back to default profiles: default
+2023-06-06 13:24:21,856 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-06-06 13:24:21,857 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2023-06-06 13:24:21,976 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-06-06 13:24:22,146 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-06-06 13:24:22,255 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-06-06 13:24:22,307 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2023-06-06 13:24:22,489 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2023-06-06 13:24:22,491 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2023-06-06 13:24:22,684 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2023-06-06 13:24:22,844 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-06 13:24:22,860 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [main] HHH000422: Disabling contextual LOB creation as connection was null
+2023-06-06 13:24:22,866 INFO org.hibernate.type.BasicTypeRegistry [main] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5292ceca
+2023-06-06 13:24:24,026 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [main] HHH000397: Using ASTQueryTranslatorFactory
+2023-06-06 13:24:24,682 INFO com.example.banki.BankiApplication [main] Started BankiApplication in 4.455 seconds (JVM running for 6.183)
+2023-06-06 13:35:19,856 INFO com.zaxxer.hikari.HikariDataSource [Thread-12] HikariPool-1 - Shutdown initiated...
+2023-06-06 13:35:19,863 INFO com.zaxxer.hikari.HikariDataSource [Thread-12] HikariPool-1 - Shutdown completed.
